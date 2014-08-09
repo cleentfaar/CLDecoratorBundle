@@ -25,7 +25,7 @@ class DecoratorExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'twig_extension_decoration_decorator';
+        return 'twig_extension_decorator';
     }
 
     /**
