@@ -5,9 +5,9 @@ parameters:
 services:
   cl_decorator.twig.decorator_extension:
     class: %cl_decorator.twig.decorator_extension.class%
-    arguments: [@cl_decorator.delegating_decorator_factory]
+    arguments: [@cl_decorator.delegating_decorator]
     tags:
       - { name: twig.extension }
 
-  cl_decorator.delegating_decorator_factory:
-    class: %cl_decorator.delegating_decorator_factory.class%
+  cl_decorator.delegating_decorator:
+    class: %cl_decorator.delegating_decorator.class%
