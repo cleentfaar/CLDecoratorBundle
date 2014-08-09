@@ -1,9 +1,13 @@
 parameters:
-  cl_decoration.twig.decorator_extension.class: CL\Bundle\WindmillBundle\Twig\DecoratorExtension
+  cl_decorator.delegating_decorator_factory.class: CL\Decorator\Factory\DelegatingDecoratorFactory
+  cl_decorator.twig.decorator_extension.class: CL\Bundle\DecoratorBundle\Twig\DecoratorExtension
 
 services:
-  cl_decoration.twig.decorator_extension:
-    class: %cl_decoration.twig.decorator_extension.class%
-    arguments: [@cl_decoration.delegating_decorator_factory]
+  cl_decorator.twig.decorator_extension:
+    class: %cl_decorator.twig.decorator_extension.class%
+    arguments: [@cl_decorator.delegating_decorator_factory]
     tags:
       - { name: twig.extension }
+
+  cl_decorator.delegating_decorator_factory:
+    class: %cl_decorator.delegating_decorator_factory.class%

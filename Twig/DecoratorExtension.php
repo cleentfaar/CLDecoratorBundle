@@ -1,6 +1,6 @@
 <?php
 
-namespace CL\Bundle\WindmillBundle\Twig;
+namespace CL\Bundle\DecoratorBundle\Twig;
 
 use CL\Decorator\Factory\DecoratorFactoryInterface;
 use CL\Decorator\AbstractDecorator;
