@@ -1,6 +1,6 @@
 <?php
 
-namespace CL\Bundle\WindmillBundle\Twig;
+namespace CL\Bundle\DecoratorBundle\Twig;
 
 use CL\Decorator\Factory\DecoratorFactoryInterface;
 use CL\Decorator\AbstractDecorator;
@@ -33,9 +33,9 @@ class DecoratorExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
-        return array(
+        return [
             'decorate' => new \Twig_Function_Method($this, 'decorate'),
-        );
+        ];
     }
 
     /**
@@ -59,6 +59,6 @@ class DecoratorExtension extends \Twig_Extension
             return $object;
         }
 
-        return $this->decoratorFactory->create($object, $this->decoratorFactory);
+        return $this->decoratorFactory->decorate($object, $this->decoratorFactory);
     }
 }
