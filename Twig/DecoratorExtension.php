@@ -2,22 +2,22 @@
 
 namespace CL\Bundle\DecoratorBundle\Twig;
 
-use CL\Decorator\Factory\DecoratorFactoryInterface;
-use CL\Decorator\AbstractDecorator;
+use CL\Decorator\DecoratorInterface;
+use CL\Decorator\DelegatingDecorator;
 
 class DecoratorExtension extends \Twig_Extension
 {
     /**
-     * @var DecoratorFactoryInterface
+     * @var DelegatingDecorator
      */
-    protected $decoratorFactory;
+    protected $delegatingDecorator;
 
     /**
-     * @param DecoratorFactoryInterface $decoratorFactory
+     * @param DelegatingDecorator $delegatingDecorator
      */
-    public function __construct(DecoratorFactoryInterface $decoratorFactory)
+    public function __construct(DelegatingDecorator $delegatingDecorator)
     {
-        $this->decoratorFactory = $decoratorFactory;
+        $this->delegatingDecorator = $delegatingDecorator;
     }
 
     /**
@@ -55,10 +55,10 @@ class DecoratorExtension extends \Twig_Extension
             throw new \InvalidArgumentException(sprintf('You must pass an object to decorate, "%s" given', gettype($object)));
         }
 
-        if ($object instanceof AbstractDecorator) {
+        if ($object instanceof DecoratorInterface) {
             return $object;
         }
 
-        return $this->decoratorFactory->decorate($object, $this->decoratorFactory);
+        return $this->delegatingDecorator->inject($object, $this->delegatingDecorator);
     }
 }

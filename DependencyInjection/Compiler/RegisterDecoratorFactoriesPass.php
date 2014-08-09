@@ -13,10 +13,10 @@ class RegisterDecoratorFactoriesPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $definition = $container->getDefinition('cl_decorator.delegating_decorator_factory');
+        $definition = $container->getDefinition('cl_decorator.delegating_decorator');
 
-        foreach ($container->findTaggedServiceIds('cl_decorator.decorator_factory') as $id => $factories) {
-            $definition->addMethodCall('registerFactory', array(new Reference($id)));
+        foreach ($container->findTaggedServiceIds('cl_decorator.decorator') as $id => $factories) {
+            $definition->addMethodCall('registerDecorator', array(new Reference($id)));
         }
     }
 }
