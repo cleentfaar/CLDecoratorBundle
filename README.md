@@ -11,10 +11,9 @@ A Symfony bundle that integrates the Decoration library, providing DI- and Twig 
 
 
 # Documentation
-
 - [Installation](Resources/doc/installation.md)
 - [Usage](Resources/doc/usage.md)
 
 
 # Thanks
-- @fieg & @pkruithof; original code on decorating entities
+- [@fieg](https://github.com/fieg) & [@pkruithof](https://github.com/pkruithof); code ideas for decorating entities specifically.
