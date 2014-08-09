@@ -1,4 +1,4 @@
-# The CLDecoration Bundle [![License](https://poser.pugx.org/cleentfaar/CLDecoratorBundle/license.svg)](https://packagist.org/packages/cleentfaar/CLDecoratorBundle)
+# The CLDecoration Bundle [![License](https://poser.pugx.org/cleentfaar/decorator-bundle/license.svg)](https://packagist.org/packages/cleentfaar/decorator-bundle)
 
 A Symfony bundle that integrates the Decoration library, providing DI- and Twig integrations for decorating your objects.
 
