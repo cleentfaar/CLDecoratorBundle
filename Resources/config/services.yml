@@ -1,13 +1,13 @@
 parameters:
-  cl_decorator.delegating_decorator_factory.class: CL\Decorator\Factory\DelegatingDecoratorFactory
+  cl_decorator.delegating_decorator.class: CL\Decorator\DelegatingDecorator
   cl_decorator.twig.decorator_extension.class: CL\Bundle\DecoratorBundle\Twig\DecoratorExtension
 
 services:
+  cl_decorator.delegating_decorator:
+    class: %cl_decorator.delegating_decorator.class%
+
   cl_decorator.twig.decorator_extension:
     class: %cl_decorator.twig.decorator_extension.class%
     arguments: [@cl_decorator.delegating_decorator]
     tags:
       - { name: twig.extension }
-
-  cl_decorator.delegating_decorator:
-    class: %cl_decorator.delegating_decorator.class%
