@@ -1,0 +1,9 @@
+parameters:
+  cl_decoration.twig.decorator_extension.class: CL\Bundle\WindmillBundle\Twig\DecoratorExtension
+
+services:
+  cl_decoration.twig.decorator_extension:
+    class: %cl_decoration.twig.decorator_extension.class%
+    arguments: [@cl_decoration.delegating_decorator_factory]
+    tags:
+      - { name: twig.extension }
